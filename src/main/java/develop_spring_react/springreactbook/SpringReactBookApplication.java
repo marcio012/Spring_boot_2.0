@@ -13,7 +13,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.repository.NoRepositoryBean;
 
 @SpringBootApplication
 public class SpringReactBookApplication {
@@ -30,10 +29,9 @@ public class SpringReactBookApplication {
     private UserRepository userRepository;
 
     @Autowired
-
     public static void main(String[] args) {
         SpringApplication.run(SpringReactBookApplication.class, args);
-        logger.info("Hello World.");
+//        logger.info("Hello World.");
     }
 
     @Bean
@@ -55,16 +53,12 @@ public class SpringReactBookApplication {
             // Processo de Bcrypt
             // username user senha: MAR@120881
             //16384$8$1$.53Uk2nQFlg=$2e82c9ccad152313f70747ba68d481b1cdc5ded0f68b3338ed1d6e1b3a649611
-            userRepository.save(new User("user",
-                    "$2a$04$yvHAiOz399q08118vwcBBeqNqX5EfNu/ZNhVUxTuNBxLbhrSm67ZS",
-                    "USER"));
+            userRepository.save(new User("user", "$2a$04$1.YhMIgNX/8TkCKGFUONWO1waedKhQ5KrnB30fl0Q01QKqmzLf.Zi", "USER"));
 
             // user admin senha: 12345678
             // $2y$12$AFfHf7LYvdgM0BFHo/vvM.e9c8P4X76yz6cIUqfxpsaebPex9YrcK
 
-            userRepository.save(new User("admin",
-                    "$2a$04$3GwA3gWzNBTUMCc8ACe4Bu4XEqNa3Hna6ABmxiX2oL3fTTLeh603S",
-                    "ADMIN"));
+            userRepository.save(new User("admin", "$2a$04$KNLUwOWHVQZVpXyMBNc7JOzbLiBjb9Tk9bP7KNcPI12ICuvzXQQKG","ADMIN"));
 
 
 

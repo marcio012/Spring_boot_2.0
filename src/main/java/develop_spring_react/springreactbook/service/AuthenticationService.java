@@ -18,13 +18,13 @@ public class AuthenticationService  {
     static final String PREFIX = "Bearer";
 
     // adicionando o token no header
-    static public void addToken(HttpServletResponse response, String username) {
+    static public void addToken(HttpServletResponse res, String username) {
         String JwtToken = Jwts.builder().setSubject(username)
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
                 .signWith(SignatureAlgorithm.HS512, SIGNINGKEY)
                 .compact();
-        response.addHeader("Authorization", PREFIX + " " + JwtToken);
-        response.addHeader("Access-Control-Expose-Headers", "Authorization");
+        res.addHeader("Authorization", PREFIX + " " + JwtToken);
+        res.addHeader("Access-Control-Expose-Headers", "Authorization");
     }
 
     // Get Token
