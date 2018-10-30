@@ -44,7 +44,7 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
     @Override
     protected void successfulAuthentication(
             HttpServletRequest request, HttpServletResponse response,
-            FilterChain chain, Authentication auth) throws IOException, SecurityException {
+            FilterChain chain, Authentication auth) throws IOException, ServletException {
         AuthenticationService.addToken(response, auth.getName());
     }
 }

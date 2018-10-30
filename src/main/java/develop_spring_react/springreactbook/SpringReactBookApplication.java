@@ -54,16 +54,16 @@ public class SpringReactBookApplication {
 
             // Processo de Bcrypt
             // username user senha: MAR@120881
-            // $2y$12$2vGF/e22kfeQq6X0bJ06f.Tsa.eEy7A25nUCkLC6mumsFXf/CjXqq
+            //16384$8$1$.53Uk2nQFlg=$2e82c9ccad152313f70747ba68d481b1cdc5ded0f68b3338ed1d6e1b3a649611
             userRepository.save(new User("user",
-                    "$2y$12$2vGF/e22kfeQq6X0bJ06f.Tsa.eEy7A25nUCkLC6mumsFXf/CjXqq",
+                    "$2a$04$yvHAiOz399q08118vwcBBeqNqX5EfNu/ZNhVUxTuNBxLbhrSm67ZS",
                     "USER"));
 
             // user admin senha: 12345678
             // $2y$12$AFfHf7LYvdgM0BFHo/vvM.e9c8P4X76yz6cIUqfxpsaebPex9YrcK
 
             userRepository.save(new User("admin",
-                    "$2y$12$AFfHf7LYvdgM0BFHo/vvM.e9c8P4X76yz6cIUqfxpsaebPex9YrcK",
+                    "$2a$04$3GwA3gWzNBTUMCc8ACe4Bu4XEqNa3Hna6ABmxiX2oL3fTTLeh603S",
                     "ADMIN"));
 
 
