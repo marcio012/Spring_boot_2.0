@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -16,7 +18,8 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String usename) {
         User currentUser = userRepository.findByUsername(usename);
         UserDetails user = new org.springframework.security.core.userdetails.User(
-                usename, currentUser.getPassword(), true, true, true, true,
+                usename, currentUser.getPassword(), true, true,
+                true, true,
                 AuthorityUtils.createAuthorityList(currentUser.getRole()));
 
         return user;
