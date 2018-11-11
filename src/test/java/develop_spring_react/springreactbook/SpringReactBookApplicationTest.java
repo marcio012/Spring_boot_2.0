@@ -9,9 +9,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringReactBookApplicationTests {
+public class SpringReactBookApplicationTest {
 
     @Autowired
     private CarController controller;
@@ -21,4 +22,11 @@ public class SpringReactBookApplicationTests {
         assertThat(controller).isNotNull();
     }
 
+    @Test
+    public void main() {
+    }
+
+    @Test
+    public void runner() {
+    }
 }

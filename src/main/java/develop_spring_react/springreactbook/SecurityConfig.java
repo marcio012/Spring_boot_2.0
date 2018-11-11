@@ -44,12 +44,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().cors().and().authorizeRequests().antMatchers(
-                HttpMethod.POST, "/login")
+        http.cors().and().authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/login")
                 .permitAll().anyRequest().authenticated().and()
                 // filtro entre api/login
                 .addFilterBefore(new LoginFilter("/login",
-                        authenticationManager()), UsernamePasswordAuthenticationFilter.class)
+                        authenticationManager()),
+                        UsernamePasswordAuthenticationFilter.class)
                 // Filter for other request
                 .addFilterBefore(new AuthenticationFilter(),
                         UsernamePasswordAuthenticationFilter.class);

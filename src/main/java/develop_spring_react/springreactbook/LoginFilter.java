@@ -28,8 +28,8 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
     public Authentication attemptAuthentication(
             HttpServletRequest req, HttpServletResponse rep)
             throws AuthenticationException, IOException, ServletException {
-        AccountCredentials creds = new ObjectMapper().readValue(
-                req.getInputStream(), AccountCredentials.class);
+        AccountCredentials creds = new ObjectMapper()
+                .readValue(req.getInputStream(), AccountCredentials.class);
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
                         creds.getUsername(),

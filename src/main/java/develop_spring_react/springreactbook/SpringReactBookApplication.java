@@ -31,7 +31,7 @@ public class SpringReactBookApplication {
     @Autowired
     public static void main(String[] args) {
         SpringApplication.run(SpringReactBookApplication.class, args);
-//        logger.info("Hello World.");
+        logger.info("Hello World.");
     }
 
     @Bean
